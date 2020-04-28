@@ -1,0 +1,88 @@
+object Form4: TForm4
+  Left = 641
+  Height = 240
+  Top = 379
+  Width = 320
+  Caption = 'Form4'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object Button1: TButton
+    Left = 10
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 152
+    Top = 88
+    Width = 304
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 128
+    top = 10
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'gorod_transport'
+    KeepConnection = False
+    Password = '139702'
+    Transaction = SQLTransaction1
+    UserName = 'studd'
+    HostName = '127.0.0.1'
+    SkipLibraryVersionCheck = False
+    left = 39
+    top = 10
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'marshrut1'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'transport1'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'data_nach'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'data_okonch'
+        DataType = ftDateTime
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'Select * from dvizhenie1'
+    )
+    Params = <>
+    left = 68
+    top = 10
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL57Connection1
+    left = 97
+    top = 10
+  end
+end

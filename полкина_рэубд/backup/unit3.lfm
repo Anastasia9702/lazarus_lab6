@@ -1,0 +1,82 @@
+object Form3: TForm3
+  Left = 323
+  Height = 240
+  Top = 378
+  Width = 320
+  Caption = 'Form3'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 124
+    Top = 56
+    Width = 248
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'gorod_transport'
+    KeepConnection = False
+    Password = '139702'
+    Transaction = SQLTransaction1
+    UserName = 'studd'
+    HostName = '127.0.0.1'
+    SkipLibraryVersionCheck = False
+    left = 128
+    top = 10
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'nomer'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nom_marshruta'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'punkt_ostanovok'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 30
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'Select * from harakteristik1'
+    )
+    Params = <>
+    left = 39
+    top = 10
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL57Connection1
+    left = 68
+    top = 10
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 97
+    top = 10
+  end
+end

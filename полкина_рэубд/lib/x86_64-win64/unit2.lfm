@@ -1,0 +1,87 @@
+object Form2: TForm2
+  Left = 642
+  Height = 240
+  Top = 108
+  Width = 320
+  Caption = 'Form2'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object Button1: TButton
+    Left = 10
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = 'сохранить'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 16
+    Height = 128
+    Top = 64
+    Width = 304
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'gorod_transport'
+    KeepConnection = False
+    Password = '139702'
+    Transaction = SQLTransaction1
+    UserName = 'studd'
+    HostName = '127.0.0.1'
+    SkipLibraryVersionCheck = False
+    left = 128
+    top = 10
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'nom_marshruta'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nazvanie'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'kolvo_ostanovok'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'protazhonost'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'Select * from marshrut1'
+    )
+    Params = <>
+    left = 39
+    top = 10
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL57Connection1
+    left = 68
+    top = 10
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 97
+    top = 10
+  end
+end
